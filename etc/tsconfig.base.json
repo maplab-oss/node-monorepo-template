@@ -13,12 +13,6 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "*"
-      ]
-    }
-  },
+    "jsx": "preserve"
+  }
 }

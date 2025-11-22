@@ -11,7 +11,7 @@ Build end to end typescript apps with:
 - zapper
 - zod
 - Vitest
-- tRPC (wip 🚧)
+- tRPC
 - shadcn/ui (wip 🚧)
 - Clerk (wip 🚧)
 - BullMQ (wip 🚧)

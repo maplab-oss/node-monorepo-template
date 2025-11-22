@@ -2,7 +2,6 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
 import { isProd, port } from "./config";
-import { helloWorldRouter } from "./routers/helloWorld";
 import { appRouter } from "@maplab-oss/helloworld-trpc";
 
 const app = Fastify({
@@ -22,7 +21,6 @@ await app.register(fastifyTRPCPlugin, {
   trpcOptions: { router: appRouter },
 });
 
-await app.register(helloWorldRouter);
 app.get("/health", (_, reply) => reply.status(200).send({ ok: true }));
 
 try {

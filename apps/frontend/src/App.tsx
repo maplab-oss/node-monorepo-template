@@ -1,31 +1,24 @@
 import { useState, useEffect } from "react";
-import { apiBaseUrl } from "./config";
 import { trpc } from "./trpc";
-import z from "zod";
-
-const schema = z.object({ message: z.string() });
+import { Card, CardContent } from "./components/ui/card";
 
 export const App = () => {
   const [message, setMessage] = useState<string>("");
-  const [trpcMessage, setTrpcMessage] = useState<string>("");
 
   useEffect(() => {
-    const getMessages = async () => {
-      const res = await fetch(`${apiBaseUrl}/`);
-      const data = schema.parse(await res.json());
-      setMessage(data.message);
-
+    const getData = async () => {
       const trpcData = await trpc.helloWorld.query();
-      setTrpcMessage(trpcData.message);
+      setMessage(trpcData.message);
     };
 
-    getMessages();
+    getData();
   }, []);
 
   return (
-    <>
-      <p>{message}</p>
-      <p>{trpcMessage}</p>
-    </>
+    <Card className="m-4">
+      <CardContent className="space-y-4">
+        <p>{message}</p>
+      </CardContent>
+    </Card>
   );
 };

@@ -7,7 +7,6 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@maplab-oss/helloworld-config": "workspace:*",
     "@maplab-oss/helloworld-trpc": "workspace:*",
     "@fastify/cors": "^10.0.1",
     "@trpc/server": "^11.7.1",

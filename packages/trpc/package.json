@@ -16,6 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@maplab-oss/helloworld-config": "workspace:*",
     "@trpc/server": "^11.7.1"
   }
 }
