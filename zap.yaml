@@ -1,0 +1,20 @@
+project: node-monorepo-template
+env_files: [.env.base]
+bare_metal:
+  backend:
+    aliases: [be, b]
+    cmd: pnpm --filter=@maplab-oss/helloworld-backend dev
+    env:
+      - BACKEND_PORT
+  frontend-vite:
+    cmd: pnpm --filter=@maplab-oss/helloworld-frontend-vite dev
+    env:
+      - FRONTEND_VITE_PORT
+      - VITE_API_BASE_URL
+  frontend-next:
+    cmd: pnpm --filter=@maplab-oss/helloworld-frontend-next dev
+    env:
+      - FRONTEND_NEXT_PORT
+      - NEXT_PUBLIC_API_BASE_URL
+  config:
+    cmd: pnpm --filter=@maplab-oss/helloworld-config dev

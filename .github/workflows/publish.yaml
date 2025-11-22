@@ -1,0 +1,25 @@
+name: Publish Packages
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  publish:
+    if: false # Disable publishing until needed.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: 'https://npm.pkg.github.com/'
+          scope: '@maplab-oss'
+      - run: pnpm install
+      - run: pnpm -w build
+      - run: pnpm publish -r --filter "./packages/*" --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_PUBLISH_TOKEN }}

@@ -1,0 +1,32 @@
+{
+  "name": "@maplab-oss/node-monorepo-template",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.10.0",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^20",
+    "eslint": "^9",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^16.5.0",
+    "ts-node": "^10.9.2",
+    "turbo": "^2",
+    "typescript": "^5",
+    "typescript-eslint": "^8.47.0",
+    "vitest": "^1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "zod": "^4.1.12"
+  }
+}
