@@ -13,6 +13,7 @@ These guidelines optimize for clarity, minimal concepts, and low cognitive load.
   * Enforces consistent naming and imports
 * Files are named directly after the thing they export
   * No suffixes like `.model.ts`, `.service.ts`, etc.
+* All imports must be declared at the top of the file — never inside functions or blocks (except for intentional circular-dependency or platform guards)
 
 ---
 
