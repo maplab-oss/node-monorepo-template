@@ -9,6 +9,7 @@ The project may well already be running in the background. You can check and man
 ```bash
 zap ps
 zap start someservice
+zap logs someservice --no-follow
 zap restart someservice
 ```
 
