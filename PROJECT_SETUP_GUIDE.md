@@ -41,6 +41,9 @@ Complete these tasks to transform the template into the new project:
    - Add context that will help AI agents work on this project
    - Reference any special considerations or gotchas
 
+6. **Assign random ports**
+For each app, assign a random port so that it doesn't clash with other projects. Make sure to find and replace across the whole repo.
+
 6. **Update render.yaml**
    - Set project name
    - Set all the repo URLs to the new repo
