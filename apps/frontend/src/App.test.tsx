@@ -1,8 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { App } from "./App";
+import { trpc } from "./trpc";
 
-global.fetch = vi.fn();
+vi.mock("./trpc", () => ({
+  trpc: {
+    helloWorld: {
+      query: vi.fn(),
+    },
+  },
+}));
 
 describe("App", () => {
   beforeEach(() => {
@@ -10,9 +17,9 @@ describe("App", () => {
   });
 
   it("should render the message from the API", async () => {
-    vi.mocked(fetch).mockResolvedValueOnce({
-      json: async () => ({ message: "Hello world" }),
-    } as Response);
+    vi.mocked(trpc.helloWorld.query).mockResolvedValueOnce({
+      message: "Hello world",
+    });
 
     render(<App />);
 
@@ -20,6 +27,6 @@ describe("App", () => {
       expect(screen.getByText("Hello world")).toBeInTheDocument();
     });
 
-    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(trpc.helloWorld.query).toHaveBeenCalledTimes(1);
   });
 });

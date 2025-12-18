@@ -14,9 +14,14 @@ bare_metal:
       - FRONTEND_VITE_PORT
       - VITE_API_BASE_URL
 tasks:
-  buildall:
+  lint:
+    cmds:
+      - pnpm eslint . --fix
+  checks:
     cmds:
       - pnpm eslint . --fix
       - pnpm turbo run typecheck
+  build:
+    cmds:
       - pnpm turbo run build --filter=@maplab-oss/helloworld-backend
       - pnpm turbo run build --filter=@maplab-oss/helloworld-frontend
