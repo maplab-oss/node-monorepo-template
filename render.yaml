@@ -12,6 +12,8 @@ projects:
       envVars:
       - key: APP_ENV
         value: production
+      - key: PORT
+        value: 10000
       - key: FRONTEND_URL
         sync: false
       - key: MONGO_CONNECTION_STRING
