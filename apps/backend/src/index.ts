@@ -1,26 +1,15 @@
 import Fastify from "fastify";
 import cors from "@fastify/cors";
 import { fastifyTRPCPlugin } from "@trpc/server/adapters/fastify";
-import { isProd, port } from "./config";
+import { isProd, port, frontendOrigin } from "./config";
 import { appRouter } from "@maplab-oss/helloworld-trpc/server";
 
 const app = Fastify({
   trustProxy: true,
 });
 
-// CORS configuration for template deployments:
-// In prod, allow Render domains + custom domains (via FRONTEND_URL)
-// In dev, allow all origins
-const allowedOrigins = isProd
-  ? [
-      /\.onrender\.com$/,
-      /\.vercel\.app$/,
-      ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
-    ]
-  : true;
-
 await app.register(cors, {
-  origin: allowedOrigins,
+  origin: isProd ? [frontendOrigin] : true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 });
