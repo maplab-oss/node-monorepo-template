@@ -10,3 +10,7 @@ export const frontendOrigin =
   frontendUrl ||
   (frontendHost && `https://${frontendHost}.onrender.com`) ||
   "";
+
+if (isProd && !frontendOrigin) {
+  throw new Error("FRONTEND_URL or FRONTEND_HOST must be set in production");
+}
