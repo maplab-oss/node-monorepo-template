@@ -10,8 +10,3 @@ export const frontendOrigin =
   frontendUrl ||
   (frontendHost && `https://${frontendHost}.onrender.com`) ||
   "";
-
-if (isProd && !frontendOrigin) {
-  console.warn("⚠️  WARNING: FRONTEND_URL or FRONTEND_HOST not set. CORS will allow all origins.");
-  console.warn("⚠️  This should only happen on first deploy. Set FRONTEND_URL in production!");
-}
