@@ -12,8 +12,6 @@ projects:
       envVars:
       - key: APP_ENV
         value: production
-      - key: BACKEND_PORT
-        value: 2028
       - key: MONGO_CONNECTION_STRING
         sync: false
       region: singapore
