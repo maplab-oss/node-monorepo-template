@@ -44,6 +44,16 @@ Small functions force good decomposition and natural modularity.
 
 > Some exceptions can be made for super ubiqtuitous conventions and tools like NextJS and shadcn/ui patterns.
 
+### Component Folders
+
+For big components, use a folder structure with `index.ts`:
+
+```
+/SomeComponent
+  index.ts        // export { SomeComponent } from "./SomeComponent"
+  SomeComponent.tsx    // the actual component
+```
+
 ---
 
 ## 5. Naming
