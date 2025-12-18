@@ -7,7 +7,7 @@ projects:
     - type: web
       name: backend
       runtime: node
-      repo: https://github.com/maplab-oss/node-monorepo-template
+      repo: https://github.com/maplab-oss/helloworld
       plan: free
       envVars:
       - key: APP_ENV
@@ -35,7 +35,7 @@ projects:
     - type: web
       name: frontend
       env: static
-      repo: https://github.com/maplab-oss/node-monorepo-template
+      repo: https://github.com/maplab-oss/helloworld
       envVars:
       - key: VITE_BACKEND_HOST
         fromService:

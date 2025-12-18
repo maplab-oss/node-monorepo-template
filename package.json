@@ -1,5 +1,5 @@
 {
-  "name": "@maplab-oss/node-monorepo-template",
+  "name": "@maplab-oss/helloworld",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.10.0",

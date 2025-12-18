@@ -1,4 +1,4 @@
-project: node-monorepo-template
+project: helloworld
 env_files: [.env.base]
 bare_metal:
   backend:
