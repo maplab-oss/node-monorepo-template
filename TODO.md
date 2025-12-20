@@ -1,0 +1,3 @@
+we should be more deliberate with env vars, packages should never read env vars directly, cos then importing a package implicitly introduces env var dependencies. But we need to make it easy for apps to make sure packages get the 'config vars' they need. The way i would solve this is that each package has a type called EnvContext and functions would just take the whole context object as input. that way we can just pipe in the entire contect from the app level with minimal fuss. 
+
+idk, im not even sure what vars are involved so maybe functions can just accept them directly if its simple but it would be nice to come up with a pattern that scales
