@@ -21,4 +21,4 @@ This project runs background processes via `zap.yaml` config. **Processes persis
 
 ---
 
-For complete documentation, see: https://zapper.felixsebastian.dev
+For full documentation, see: https://raw.githubusercontent.com/felixsebastian/zapper/refs/heads/main/docs/usage.md
